@@ -1,14 +1,27 @@
 import { useAnecdoteActions } from '../store'
+import { useMessageControls } from '../storeNotification'
 
 const Anecdote = ({ anecdote }) => {
-  const { addVote } = useAnecdoteActions()
+  const { addVote, removeOne } = useAnecdoteActions()
+  const { setMessage } = useMessageControls()
+
+  const vote = async () => {
+    await addVote(anecdote.id)
+    setMessage(`You voted '${anecdote.content}'`)
+  }
+
+  const remove = async () => {
+    await removeOne(anecdote.id)
+    setMessage('You removed an anecdote')
+  }
 
   return (
     <div>
       <div>{anecdote.content}</div>
       <div>
         has {anecdote.votes}
-        <button onClick={() => addVote(anecdote.id)}>vote</button>
+        <button onClick={vote}>vote</button>
+        {anecdote.votes === 0 && <button onClick={remove}>remove</button>}
       </div>
     </div>
   )
