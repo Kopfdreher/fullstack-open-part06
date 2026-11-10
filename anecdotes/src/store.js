@@ -5,9 +5,10 @@ const useAnecdoteStore = create((set) => ({
   anecdotes: [],
   filter: '',
   actions: {
-    add: anecdote => set(
-      state => ({ anecdotes: state.anecdotes.concat(anecdote) })
-    ),
+    add: async (content) => {
+      const newAnecdote = await anecdoteService.createNew(content)
+      set(state => ({ anecdotes: state.anecdotes.concat(newAnecdote) }))
+    },
     initialize: async () => {
       const anecdotes = await anecdoteService.getAll()
       set(() => ({ anecdotes }))
