@@ -8,7 +8,7 @@
     {
       "id": "2",
       "content": "React app benefits from custom hooks",
-      "important": false
+      "important": true
     },
     {
       "id": "3",
@@ -17,7 +17,7 @@
     },
     {
       "content": "hello",
-      "important": false,
+      "important": true,
       "id": "x8lKPWM91zY"
     }
   ],
