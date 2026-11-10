@@ -7,7 +7,7 @@ const Anecdote = ({ anecdote }) => {
 
   const vote = async () => {
     await addVote(anecdote.id)
-    setMessage(`You voted '${anecdote.content}'`)
+    setMessage(`you voted '${anecdote.content}'`)
   }
 
   const remove = async () => {
@@ -21,7 +21,7 @@ const Anecdote = ({ anecdote }) => {
       <div>
         has {anecdote.votes}
         <button onClick={vote}>vote</button>
-        {anecdote.votes === 0 && <button onClick={remove}>remove</button>}
+        {anecdote.votes === 0 && <button onClick={remove}>delete</button>}
       </div>
     </div>
   )
