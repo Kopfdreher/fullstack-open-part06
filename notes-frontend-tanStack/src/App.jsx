@@ -10,9 +10,7 @@ const App = () => {
     addNoteToServer({ content, important: true })
   }
 
-  if (isPending) {
-    return <div>loading data...</div>
-  }
+  if (isPending) return <div>loading data...</div>
 
   return (
     <div>
