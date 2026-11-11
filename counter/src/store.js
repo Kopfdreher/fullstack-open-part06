@@ -28,3 +28,5 @@ export const useValues = () => useCounterStore(state => {
   }))
 })
 export const useCounterControls = () => useCounterStore(state => state.actions)
+
+export default useCounterStore
