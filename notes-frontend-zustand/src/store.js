@@ -10,10 +10,6 @@ const useNoteStore = create(devtools((set, get) => ({
       const newNote = await noteService.createNew(content)
       set(state => ({ notes: state.notes.concat(newNote) }))
     },
-    initialize: async () => {
-      const notes = await noteService.getAll()
-      set(() => ({ notes }))
-    },
     toggleImportance: async (id) => {
       const note = get().notes.find(n => n.id === id)
       const updated = await noteService.update(
@@ -23,7 +19,11 @@ const useNoteStore = create(devtools((set, get) => ({
         notes: state.notes.map(n => n.id === id ? updated : n)
       }))
     },
-    setFilter: value => set(() => ({ filter: value }))
+    setFilter: value => set(() => ({ filter: value })),
+    initialize: async () => {
+      const notes = await noteService.getAll()
+      set(() => ({ notes }))
+    },
   }
 })))
 
@@ -39,3 +39,5 @@ export const useNotes = () => {
 }
 export const useFilter = () => useNoteStore(state => state.filter)
 export const useNoteActions = () => useNoteStore(state => state.actions)
+
+export default useNoteStore
