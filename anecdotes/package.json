@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "server": "json-server -p 3001 db.json",
+    "test": "vitest",
+    "server": "json-server --port 3001 --watch db.json",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "server": "json-server --port 3001 --watch db.json"
+    "preview": "vite preview"
   },
   "overrides": {
     "minimatch": "^11.0.1"
@@ -17,10 +17,12 @@
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "vitest": "^5.1.0",
     "zustand": "^5.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@testing-library/react": "^16.3.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
@@ -28,6 +30,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "jsdom": "^31.0.0",
     "json-server": "^1.0.0-beta.15",
     "vite": "^8.2.0"
   }
