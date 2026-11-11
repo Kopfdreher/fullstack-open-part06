@@ -1,30 +1,18 @@
-import { useQuery } from '@tanstack/react-query'
-import { getNotes } from './requests'
+import { useNotes } from './hooks/useNotes'
 
 const App = () => {
+  const { notes, isPending, addNote: addNoteToServer, toggleImportance } = useNotes()
+
   const addNote = async (e) => {
     e.preventDefault()
     const content = e.target.note.value
     e.target.reset()
-    console.log(content)
+    addNoteToServer({ content, important: true })
   }
 
-  const toggleImportance = (note) => {
-    console.log('toggle importance of', note.id)
-  }
-
-  const result = useQuery({
-    queryKey: ['notes'],
-    queryFn: getNotes
-  })
-
-  console.log(JSON.parse(JSON.stringify(result)))
-
-  if (result.isPending) {
+  if (isPending) {
     return <div>loading data...</div>
   }
-
-  const notes = result.data
 
   return (
     <div>
@@ -36,7 +24,7 @@ const App = () => {
       {notes.map((note) => (
         <li key={note.id}>
           {note.important ? <strong>{note.content}</strong> : note.content}
-          <button onClick={() => toggleImportance(note.id)}>
+          <button onClick={() => toggleImportance(note)}>
             {note.important ? 'make not important' : 'make important'}
           </button>
         </li>
