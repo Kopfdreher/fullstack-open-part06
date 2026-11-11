@@ -29,4 +29,22 @@ describe('useAnecdoteStore', () => {
     const { result: anecdotesResult } = renderHook(() => useAnecdotes())
     expect(anecdotesResult.current).toEqual(mockAnecdotes)
   })
+
+  it('anecdotes are sorted by votes descending', () => {
+    const unsortedAnecdotes = [
+      { id: '1', content: 'Anecdote with two votes', votes: 2 },
+      { id: '2', content: 'Anecdote with ten votes', votes: 10 },
+      { id: '3', content: 'Anecdote with three votes', votes: 3 },
+    ]
+
+    useAnecdoteStore.setState({ anecdotes: unsortedAnecdotes })
+
+    const { result } = renderHook(() => useAnecdotes())
+
+    expect(result.current).toEqual([
+      { id: '2', content: 'Anecdote with ten votes', votes: 10 },
+      { id: '3', content: 'Anecdote with three votes', votes: 3 },
+      { id: '1', content: 'Anecdote with two votes', votes: 2 },
+    ])
+  })
 })
