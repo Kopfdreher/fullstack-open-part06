@@ -1,49 +1,29 @@
 {
   "anecdotes": [
     {
-      "content": "If it hurts, do it more often",
-      "id": "47145",
-      "votes": 2
-    },
-    {
-      "content": "Adding manpower to a late software project makes it later!",
-      "id": "21149",
-      "votes": 1
-    },
-    {
-      "content": "The first 90 percent of the code accounts for the first 90 percent of the development time...The remaining 10 percent of the code accounts for the other 90 percent of the development time.",
-      "id": "69581",
-      "votes": 1
-    },
-    {
-      "content": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
-      "id": "36975",
+      "id": "f6fe0aef-cb1b-47ea-94ee-c412d8a82fcd",
+      "content": "Make it work, then make it fast",
       "votes": 0
     },
     {
-      "content": "Premature optimization is the root of all evil.",
-      "id": "25170",
-      "votes": 1
+      "id": "8d5de6b7-9f31-4cf9-b2a6-1c44cf2e8fa1",
+      "content": "There are two hard things in computer science",
+      "votes": 3
     },
     {
-      "content": "Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.",
-      "id": "98312",
-      "votes": 2
+      "id": "c747eb88-3148-4e26-adba-8c6d0d13519e",
+      "content": "Untested code is broken code",
+      "votes": 4
     },
     {
-      "content": "hello wrold",
-      "votes": 8,
-      "id": "99e02a65-465b-422e-b421-9c8af8349d87"
+      "id": "de7e2cf7-817f-4721-aa01-c040285f82b8",
+      "content": "Simplicity is the ultimate sophistication",
+      "votes": 5
     },
     {
-      "content": "say waht",
-      "votes": 0,
-      "id": "14692c7b-2acd-4ff1-afe4-1294e3ee1c77"
-    },
-    {
-      "content": "hello",
-      "votes": 0,
-      "id": "a4ebab3c-20fc-4db3-a3bf-ff769471cca0"
+      "id": "99f06098-567a-48e7-a257-1ce1ad83c354",
+      "content": "Real artists ship code",
+      "votes": 7
     }
   ]
 }
