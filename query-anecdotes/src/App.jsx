@@ -3,7 +3,7 @@ import Notification from './components/Notification'
 import { useAnecdotes } from './hooks/useAnecdotes'
 
 const App = () => {
-  const { anecdotes, isPending, isError, error, addVote } = useAnecdotes()
+  const { anecdotes, isPending, isError, addVote } = useAnecdotes()
 
   if (isPending) return <div>loading data...</div>
   if (isError) {
