@@ -23,11 +23,12 @@ export const useAnecdotes = () => {
     mutationFn: updateAnecdote,
     onSuccess: (updatedAnecdote) => {
       const anecdotes = queryClient.getQueryData(['anecdotes'])
-      queryClient.setQueryData(['anecdotes'], anecdotes)
+      queryClient.setQueryData(['anecdotes'], anecdotes
         .map(a => a.id === updatedAnecdote.id
           ? updatedAnecdote
           : a
         )
+      )
     }
   })
 
